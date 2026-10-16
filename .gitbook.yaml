@@ -1,0 +1,9 @@
+# GitBook Git Sync. Content lives at the repo root, so `root` is `./`.
+# Nav order is declared in SUMMARY.md rather than discovered from the
+# filesystem, so a new page is a deliberate addition and the order stays
+# editorial rather than alphabetical.
+root: ./
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md
