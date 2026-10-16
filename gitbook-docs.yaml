@@ -1,18 +1,4 @@
-# GitBook site Git Sync. Schema: https://api.gitbook.com/gitbook-docs.yaml
-#
-# One space, pointed at the repository root, because the documentation is one
-# book: a single SUMMARY.md orders all 19 pages, and the pages link to each
-# other by relative path (README.md -> tools/create.md, tools/*.md ->
-# ../concepts.md). A space's directory is read as one book, so splitting
-# tools/ and windows/ into their own spaces would give each its own URL
-# namespace and break those links, and would leave concepts.md, glossary.md
-# and extensions.md without a directory of their own.
-#
-# Page order inside the space stays in SUMMARY.md, declared by .gitbook.yaml.
-
 $schema: https://api.gitbook.com/gitbook-docs.yaml
-version: 1
-
 site:
   title: DBTools
   structure:
