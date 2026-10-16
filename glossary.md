@@ -10,12 +10,12 @@ Background for the ideas behind several of these: [Concepts](concepts.md).
 
 ### Blueprint
 
-An Axiom blueprint — a saved chunk of build, read from Axiom's blueprint browser. DBTools
+An Axiom blueprint - a saved chunk of build, read from Axiom's blueprint browser. DBTools
 does not have a blueprint format of its own. The Create Tool *writes* blueprints; Place,
 Rotate, BP→Path, BP→Shape, Grid Place, Prototype and the Biome Brush's object layers *read*
 them.
 
-In an object layer a blueprint is stored as **path + name + weight**, not embedded — see
+In an object layer a blueprint is stored as **path + name + weight**, not embedded - see
 [preset](#preset).
 
 ### Column mask
@@ -24,7 +24,7 @@ The area you paint with the Biome Brush. It is called a *column* mask because it
 (x, z): each painted position records the surface Y the stroke actually reached, and the
 biome is applied there.
 
-It is **selection state, not definition** — it is deliberately left out of presets, and
+It is **selection state, not definition** - it is deliberately left out of presets, and
 clearing it throws away where you were working, not what you had built.
 
 Do not confuse it with a [mask](#mask), which is a rule about where applying is *allowed*. The
@@ -65,7 +65,7 @@ One entry in a biome's stack. Either a [terrain layer](#terrain-layer) or an
 
 ### Mask
 
-A rule about **where applying is allowed** — on grass, above y=70, steeper than 45°. Built in
+A rule about **where applying is allowed** - on grass, above y=70, steeper than 45°. Built in
 Axiom's Mask window.
 
 Tested **once per column at that column's surface**, not per block, so a layer masked to a
@@ -89,7 +89,7 @@ Masked all-or-nothing: a tree either grows there or does not.
 A saved tool configuration, stored as NBT.
 
 For the Biome Brush a preset carries the layer stack, every layer's parameters and mask, the
-biome's own mask, and the Minecraft biome setting — but **not** the painted
+biome's own mask, and the Minecraft biome setting - but **not** the painted
 [column mask](#column-mask). See [Presets](concepts.md#presets).
 
 ### Solo
@@ -110,7 +110,7 @@ layer reads the mask as painted, the tree layer reads it scaled down. It scales
 
 ### Terrain layer
 
-A [layer](#layer) that replaces a **band of blocks measured from the surface** — `Offset From
+A [layer](#layer) that replaces a **band of blocks measured from the surface** - `Offset From
 Surface` plus `Depth`. The offset runs -64 to 64, so a band can start above the surface as well
 as below.
 
@@ -120,7 +120,7 @@ blocks sampled spatially rather than a single block choice.
 ### User action
 
 Axiom's input abstraction. DBTools tools do not register keybindings for Enter, Delete, Escape
-and the mouse buttons — they receive Axiom's user actions and claim the ones they have a use
+and the mouse buttons - they receive Axiom's user actions and claim the ones they have a use
 for, letting the rest reach the game.
 
 DBTools registers exactly one real Minecraft keybinding: Toggle Fly Speed, unbound by default.

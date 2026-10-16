@@ -12,10 +12,10 @@ slow and visibly imperfect. This draws the curve once and distributes along it.
 
 ## The loop
 
-1. **Add your blueprints** — `Add Blueprint` from the browser, or `Add Clipboard` for what you
+1. **Add your blueprints** - `Add Blueprint` from the browser, or `Add Clipboard` for what you
    just copied. Several can be added; the tool alternates between them along the path.
 2. **Draw the curve** by placing points in the world. Points are draggable after the fact.
-3. **Set `Distance`** — the spacing between placements.
+3. **Set `Distance`** - the spacing between placements.
 4. **Decide on `Orient To Path`** and `Roll`.
 5. **`Paste Blueprints`.**
 
@@ -46,14 +46,14 @@ combined controls will not otherwise reach.
 ## Gotchas
 
 - **Several blueprints alternate, they do not randomise.** Add three and you get 1, 2, 3, 1,
-  2, 3 along the path. That regularity is visible on a long run — for genuinely varied
+  2, 3 along the path. That regularity is visible on a long run - for genuinely varied
   scattering use the [Biome Brush](biome-brush.md)'s object layers, which roll weighted picks.
 - **`Distance` is arc length.** On a curve with a tight radius, placements that are evenly
   spaced along the path look bunched from above.
 - **Spacing does not know about asset size.** Unlike the Biome Brush's `Min Spacing`, this is
   an absolute distance, so swapping a small blueprint for a large one will overlap at the same
   setting.
-- **Escape does not cancel a drawn curve the way it cancels other placements** — this tool
+- **Escape does not cancel a drawn curve the way it cancels other placements** - this tool
   reports a *deselect point* action instead, so Escape steps out of the active point rather
   than discarding your path.
 

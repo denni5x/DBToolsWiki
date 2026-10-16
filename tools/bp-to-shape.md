@@ -13,9 +13,9 @@ evenly. When the requirement is "twelve pillars, evenly spaced", this is the too
 
 ## The loop
 
-1. **Add your blueprints** — `Add Blueprint` or `Add Clipboard`.
+1. **Add your blueprints** - `Add Blueprint` or `Add Clipboard`.
 2. **Pick a shape**: disk, plane, regular polygon, superellipse, or Archimedean spiral.
-3. **Size it** — `Size X` / `Size Z`, or `Size` with `Unlock XZ Size` off for a uniform shape.
+3. **Size it** - `Size X` / `Size Z`, or `Size` with `Unlock XZ Size` off for a uniform shape.
 4. **Set `Blueprint Count`** and check `Total Count`.
 5. **Decide on `Orient To Shape`** and `Place on Corners`.
 6. **`Paste Blueprints`.**
@@ -25,7 +25,7 @@ evenly. When the requirement is "twelve pillars, evenly spaced", this is the too
 ### `Blueprint Count` (and `Total Count`)
 
 How many placements, distributed evenly around the shape. `Total Count` reports what you will
-actually get, which is not always the number you typed — corners and shape closure affect it.
+actually get, which is not always the number you typed - corners and shape closure affect it.
 Read `Total Count` before pasting.
 
 ### Shape type
@@ -34,16 +34,16 @@ Five shapes, and the choice does more work than it looks like:
 
 | Shape | Use |
 |---|---|
-| Disk | A ring — the common case |
+| Disk | A ring - the common case |
 | Plane | A rectangular boundary |
 | Regular polygon | A ring with flat sides, for architecture that should read as built |
-| Superellipse | Between a circle and a rectangle — rounded-corner plazas |
+| Superellipse | Between a circle and a rectangle - rounded-corner plazas |
 | Archimedean spiral | The only open shape here; everything else closes |
 
 ### `Place on Corners`
 
 On an angular shape, forces a placement at each vertex. This is the difference between a
-polygon that reads as deliberate and one that looks like a circle someone got wrong — the
+polygon that reads as deliberate and one that looks like a circle someone got wrong - the
 corners are the shape's defining feature, and even spacing alone will not land on them.
 
 Irrelevant for a disk.
@@ -54,7 +54,7 @@ Irrelevant for a disk.
   and the last placement is at the outer end rather than adjacent to the first.
 - **`Total Count` is the truth.** `Blueprint Count` is a request; corner placement and shape
   closure adjust it.
-- **Several blueprints alternate rather than randomise**, same as BP→Path — on a twelve-point
+- **Several blueprints alternate rather than randomise**, same as BP→Path - on a twelve-point
   ring with three blueprints you get a visible 3-fold pattern. That is often exactly what you
   want for architecture, and exactly what you do not want for rocks.
 - **`Size` is the shape's extent, not the assets'.** Twelve large pillars on a small radius

@@ -8,8 +8,8 @@ folder, and **nothing it does goes through Axiom's undo**.
 
 ## What it does
 
-A blueprint carries a header — name, author, tags, and the yaw/pitch its thumbnail is
-rendered from — separately from its blocks. This window rewrites those headers across a
+A blueprint carries a header - name, author, tags, and the yaw/pitch its thumbnail is
+rendered from - separately from its blocks. This window rewrites those headers across a
 selection, and optionally renames the `.bp` files to match.
 
 It is for the state your blueprint folder reaches after a few months: forty assets named
@@ -32,7 +32,7 @@ It is for the state your blueprint folder reaches after a few months: forty asse
 
 ## The options that matter
 
-### `Modify Names` — prefix and suffix
+### `Modify Names` - prefix and suffix
 
 Builds the new name as `prefix + existing name + suffix`. `{i}` anywhere in the suffix is
 replaced with the blueprint's **1-based position in the selection**, so `_{i}` turns a
@@ -62,7 +62,7 @@ Sets one author string across the whole selection. There is no per-blueprint var
 Two tag widgets. `Remove Tags:` offers the tags actually present across your selection, so
 you are picking from reality rather than typing blind.
 
-These have **no enabling checkbox** — unlike every other group here, they apply whenever the
+These have **no enabling checkbox** - unlike every other group here, they apply whenever the
 widgets hold entries.
 
 ### `Change Preview Angle`
@@ -82,11 +82,11 @@ batch of assets was all captured from an unhelpful angle.
   work with outside Minecraft.
 - **A rename is a write-then-delete, not a move.** New files are written during the batch, and
   the originals are deleted only once the whole batch finishes. If the game is closed or
-  crashes mid-batch you are left with **both** copies, not a corrupt one — recoverable, but
+  crashes mid-batch you are left with **both** copies, not a corrupt one - recoverable, but
   you have to clear out the originals yourself.
 - **Name collisions get a numeric suffix.** If the new filename already exists, the file
   becomes `name_1.bp`, then `name_2.bp`, and so on. Replacing a distinguishing part of a name
-  across a selection — every `tree_oak`, `tree_birch` → `tree` — therefore produces
+  across a selection - every `tree_oak`, `tree_birch` → `tree` - therefore produces
   `tree.bp`, `tree_1.bp`, `tree_2.bp` and loses the distinction. The *stored* names all
   become identical, which the suffix does not fix.
 - **Search and replace is literal and global.** No regex, no anchoring, no word boundaries.

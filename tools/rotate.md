@@ -5,7 +5,7 @@ Rotate a pasted blueprint to any angle, snapped or free.
 ## What it's for
 
 Minecraft's own rotation is 90° at a time. This tool rotates a
-[blueprint](../glossary.md#blueprint) to **arbitrary angles** — 23°, 137° — and re-voxelises
+[blueprint](../glossary.md#blueprint) to **arbitrary angles** - 23°, 137° - and re-voxelises
 the result.
 
 It exists for the case 90° steps cannot do: a row of houses following a curved street, a fence
@@ -15,7 +15,7 @@ at the angle the terrain actually runs, a ring of pillars that are not axis-alig
 
 1. **Pick a blueprint.**
 2. **Drag `Angle (°)`** and watch the preview re-voxelise.
-3. **Set `Snap (°)`** if you want increments — 15° for regular arrangements, 1° for fine work.
+3. **Set `Snap (°)`** if you want increments - 15° for regular arrangements, 1° for fine work.
 4. **`Paste (Enter)`.**
 
 `Reset Angle` returns to zero without reloading the blueprint.
@@ -39,7 +39,7 @@ cannot reliably reproduce.
 
 ### `Live Preview`
 
-On, you see the re-voxelised result at the current angle before committing — which matters more
+On, you see the re-voxelised result at the current angle before committing - which matters more
 here than in other tools, because the stepping is the thing you are judging.
 
 ## Gotchas
@@ -53,7 +53,7 @@ here than in other tools, because the stepping is the thing you are judging.
 - **The preview re-voxelises as you drag**, so a large blueprint makes the slider feel heavy.
   Set `Snap` to a coarse value while finding the angle, then refine.
 - **Rotation is around the gizmo, which you position.** The pivot is the gizmo's target
-  position, not the blueprint's centre — so a gizmo set off to one side makes the blueprint
+  position, not the blueprint's centre - so a gizmo set off to one side makes the blueprint
   swing through an arc rather than spin in place. Check where it lands, not just how it is
   oriented.
 

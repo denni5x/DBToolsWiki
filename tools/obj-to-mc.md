@@ -13,9 +13,9 @@ Colour comes from whatever the format carries: textures and MTL materials, verte
 ## The loop
 
 1. **`Browse Model`** (and `Browse MTL` if an OBJ needs one).
-2. **Size it** — drag `Size`, or the per-axis `Scale X/Y/Z` with `Unlock XYZ Scale` on.
+2. **Size it** - drag `Size`, or the per-axis `Scale X/Y/Z` with `Unlock XYZ Scale` on.
 3. **Orient it** with `Rot X/Y/Z`, or the gizmo.
-4. **Tune the match** — `Fill Mode`, `Brightness`, `Hue`, the block filters.
+4. **Tune the match** - `Fill Mode`, `Brightness`, `Hue`, the block filters.
 5. **Turn on `Enable Block Smoothing`** and tune it.
 6. **Position and `Place (Enter)`.**
 
@@ -31,7 +31,7 @@ the model is voxelised at double resolution and rebuilt with colour-matched **st
 walls and trapdoors**, so curves and diagonals resolve.
 
 `Prefer Trapdoors` places a trapdoor wherever one fits, for thinner detail.
-`Custom Smoothing Blocks` restricts which shapes may be used — an empty list disables that
+`Custom Smoothing Blocks` restricts which shapes may be used - an empty list disables that
 shape entirely.
 
 ### `Brightness` (and `Hue`)
@@ -42,13 +42,13 @@ colours match to blocks that look flat or muddy. Applied on the plain, smoothed 
 paths alike.
 
 `Hue` rotates every sampled colour's hue up to 180° either way, leaving saturation and
-lightness alone — so greys stay grey. Use it to shift a model's palette into blocks Minecraft
+lightness alone - so greys stay grey. Use it to shift a model's palette into blocks Minecraft
 actually has.
 
 ### `Limit Smoothing by Colour` / `Max Colour Error`
 
 Smoothing picks the closest *shape*, which sometimes means accepting a worse *colour*. This sets
-a maximum colour error past which a cell takes a full block instead — trading smooth edges for
+a maximum colour error past which a cell takes a full block instead - trading smooth edges for
 accurate colour.
 
 Turn it on when a smoothed model has gone the wrong colour in places; raise `Max Colour Error`
@@ -61,7 +61,7 @@ to favour smoothness, lower it to favour colour.
   full block under every slab, stair and flat trapdoor that has nothing beneath it. If an
   imported sheet or wing looks perforated, this is the control.
 - **Scale past 10× is not available, and past 400 voxels it warns.** `Size` and the per-axis
-  sliders reach 10×, and once the longest axis passes 400 voxels the tool reports it — that is
+  sliders reach 10×, and once the longest axis passes 400 voxels the tool reports it - that is
   where revoxelising starts to cost real time.
 - **Escape and Delete are only claimed while a placement is live**, so they reach the game menu
   when a model is merely loaded. Cancelling re-arms the preview rather than dropping the model.

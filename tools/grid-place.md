@@ -7,13 +7,13 @@ Tile a blueprint across a grid.
 Repetition on a lattice: floor tiles, a field of crops, warehouse racking, a curtain wall of
 identical window modules, a test field of forty variants laid out for comparison.
 
-That last use is worth calling out — laying assets out in a grid to *look* at them side by side
+That last use is worth calling out - laying assets out in a grid to *look* at them side by side
 is one of the most practical things this tool does.
 
 ## The loop
 
 1. **Add your blueprints** with `Add Blueprint`; `Clear` empties the list.
-2. **Set `Grid X` and `Grid Y`** — how many cells each way.
+2. **Set `Grid X` and `Grid Y`** - how many cells each way.
 3. **Set `Space/Gap`** between cells.
 4. **Position** the grid in the world, with `Live Preview` showing the result.
 5. **Paste.**
@@ -22,7 +22,7 @@ is one of the most practical things this tool does.
 
 ### `Grid X` / `Grid Y`
 
-The cell counts. Note that `Grid Y` is the second *horizontal* axis here, not height — this is
+The cell counts. Note that `Grid Y` is the second *horizontal* axis here, not height - this is
 a floor-plan grid.
 
 ### `Override Blueprint Size`
@@ -37,7 +37,7 @@ sits in a bigger cell than it fills.
 ### `Create Platform`
 
 Generates a platform under the grid, using the chosen inner and outer blocks. This is what
-makes the tool useful for test layouts — assets laid out on a clean surface rather than
+makes the tool useful for test layouts - assets laid out on a clean surface rather than
 floating or buried in terrain.
 
 ## Gotchas

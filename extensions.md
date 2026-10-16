@@ -9,14 +9,14 @@ feature you read about lives, it is probably here.
 
 There are three.
 
-## Export Palette — creative colour picker
+## Export Palette - creative colour picker
 
 Axiom's creative colour picker lists ten blocks matching the colour you picked. This adds a
 **side tab below Axiom's own**, marked with a painting icon and labelled
 `Export Colours as Palette`, that turns those ten blocks into a new palette in Axiom's
 Palettes panel.
 
-The palette is named after the colour in hex — `Colour 7F3C1A` — so repeated exports stay
+The palette is named after the colour in hex - `Colour 7F3C1A` - so repeated exports stay
 apart rather than overwriting one another. (No `#`, because Axiom rejects it in a name.)
 
 The button's own tooltip reports the result: `Exported as "..."` on success, or
@@ -27,7 +27,7 @@ you see the outcome immediately without looking anywhere else.
 takes whichever slot is free below Axiom's. Turn the gradient helper on or off and this button
 moves.
 
-## Export Palette — gradient helper
+## Export Palette - gradient helper
 
 The same idea in Axiom's gradient helper, labelled `Export Gradient as Palette` and sitting
 directly below the helper's own tab.
@@ -48,7 +48,7 @@ independent stored speed, so you can keep two speeds set up and flip between the
 
 The intended use is one survey speed for crossing a build and one detail speed for working
 inside it. Each toggle *swaps* the live speed with the stored one, so the speed you just left
-is the one you come back to — it is a flip, not a jump to a fixed value.
+is the one you come back to - it is a flip, not a jump to a fixed value.
 
 Controls on the second slider match Axiom's:
 
@@ -59,13 +59,13 @@ Controls on the second slider match Axiom's:
 | Right click the arrows | Coarser step |
 | Hold an arrow | Repeats after a short delay |
 
-**Dragging covers 1× to 10×**, and the response is deliberately non-linear — curved so that
+**Dragging covers 1× to 10×**, and the response is deliberately non-linear - curved so that
 most of the slider's travel covers the low speeds, where the difference between 1× and 2×
 matters, rather than spending half the bar on speeds you cannot steer at. Half the travel gets
 you to roughly 3×, not 5×.
 
 The arrow buttons are not limited to that range: they step down as far as **0.01×**, well
-below anything drag can reach. That is the control to use for creeping along a surface — but
+below anything drag can reach. That is the control to use for creeping along a surface - but
 it also means a slider that looks empty may be set to a crawl rather than to its minimum
 useful speed.
 
@@ -76,7 +76,7 @@ whichever side your main hand is set to, mirroring with Axiom's.
 
 - **Fly speed needs server support.** Both the slider and the keybinding depend on the server
   supporting a fly speed change. Without it the slider still draws but **cannot be adjusted**,
-  and the keybinding does nothing — with no error either way. On a server where it seems
+  and the keybinding does nothing - with no error either way. On a server where it seems
   broken, this is almost always why.
 - **The second speed is not saved.** `Show 2nd Fly Speed Slider` is stored in
   `config/dbtools/dbtools.json`, but the speed itself lives in memory for the session and
@@ -84,20 +84,20 @@ whichever side your main hand is set to, mirroring with Axiom's.
 - **Toggle Fly Speed is unbound by default.** It is the mod's only Minecraft keybinding, and it
   does nothing until you set it in **Options → Controls → DBTools**.
 - **An export with nothing to export fails quietly-ish.** If the slots hold no usable blocks,
-  no palette is created and the button says `Could not create the palette` — it is reported in
+  no palette is created and the button says `Could not create the palette` - it is reported in
   the tooltip only, so it is easy to miss if you move the mouse away immediately.
 - **Duplicate palette names get a counter, up to 99.** Axiom refuses a duplicate name, so
   ` (2)` through ` (99)` are tried; past that the export fails. Only reachable by exporting the
   same colour a hundred times, but that is the limit.
 - **Exported palettes are Axiom's now.** They live in Axiom's Palettes panel and are managed
-  there — renaming or deleting one is an Axiom operation, and DBTools has no further
+  there - renaming or deleting one is an Axiom operation, and DBTools has no further
   involvement.
 - **The colour picker's tab moves.** Because it takes the free slot below Axiom's, enabling the
   gradient helper shifts it down. Muscle memory for its position does not survive that change.
 
 ## Not on this page
 
-DBTools also hooks several Axiom internals that add **no controls** — the toolbar icon
+DBTools also hooks several Axiom internals that add **no controls** - the toolbar icon
 rendering that puts the eleven tools in Axiom's tool window, the icon font merge that gives
 them glyphs, and a world render hook. These are plumbing: there is nothing to configure and
 nothing to find.

@@ -23,7 +23,7 @@ Converts **every `.bp` in the chosen folder** into a schematic.
 ### The options that matter
 
 **`Version`** targets an older Minecraft version. This is an **Axiom Commercial License
-feature** — without one the dropdown is disabled, with a tooltip saying so, and conversion
+feature** - without one the dropdown is disabled, with a tooltip saying so, and conversion
 uses the current version.
 
 The **file extension follows the target version** and is not something you choose: a target
@@ -42,7 +42,7 @@ The reverse, reading `.schem`, `.schematic` and `.litematic`.
 ### The option that matters
 
 **`Save Air`** keeps air blocks in the resulting blueprint rather than dropping them. Keep it
-on when the schematic's empty space is load-bearing — a hollow interior, a doorway, a
+on when the schematic's empty space is load-bearing - a hollow interior, a doorway, a
 clearance volume you intend to paste over existing blocks. Leave it off and the blueprint
 only carries the solid blocks, which is smaller and usually what you want for an asset.
 
@@ -53,11 +53,11 @@ you can edit.
 
 ### The workflow
 
-1. `Set Source Folder`, then pick `Source Type:` — `Blueprint (.bp)` or
+1. `Set Source Folder`, then pick `Source Type:` - `Blueprint (.bp)` or
    `Schematic (.schem/.litematic)`. One or the other, not both in a pass.
 2. **Block Mapping.** Leave `Use Default Mapping` on to use the mapping shipped with DBTools,
    or untick it and `Select Custom Mapping File` to supply your own `.txt`.
-3. `Set Output Folder` — **required**; `Convert to Hytale Prefab` stays disabled until one is
+3. `Set Output Folder` - **required**; `Convert to Hytale Prefab` stays disabled until one is
    chosen.
 4. Pick an `Anchor Mode`.
 5. `Convert to Hytale Prefab`.
@@ -70,7 +70,7 @@ then load it back with `Select Custom Mapping File`. Writing one from scratch is
 it.
 
 **`Anchor Mode`** decides the prefab's origin. `Center (region center)` uses the horizontal
-centre of the region at its minimum Y — the bottom-middle, which is what you want for
+centre of the region at its minimum Y - the bottom-middle, which is what you want for
 something that sits on the ground. `Custom (specify below)` reveals a
 `Custom Anchor (X,Y,Z)` field and anchors every prefab in the pass at those coordinates.
 
@@ -84,7 +84,7 @@ something that sits on the ground. `Custom (specify below)` reveals a
   offset, so converting a folder with `Custom` anchors every prefab in it at the same spot.
   Use `Center` for a batch of unrelated assets.
 - **`Version` silently falls back.** Without a Commercial License the dropdown is disabled and
-  conversion proceeds at the current version rather than refusing — so a batch you expected to
+  conversion proceeds at the current version rather than refusing - so a batch you expected to
   be 1.20.1 will be current-version schematics with no error.
 - **`Reload Mapping` is debug-only.** It only appears when DBTools is in debug mode. In a normal
   session, a mapping file edited on disk is picked up by re-selecting it, not by reloading.

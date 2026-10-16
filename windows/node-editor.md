@@ -14,7 +14,7 @@ a region, and the result goes to an output. Change one node's parameter and ever
 downstream follows.
 
 It earns its keep in two situations: when a result needs more than one operation stacked, and
-when you want to develop that stack **without touching the world** — `Test Terrain` exists
+when you want to develop that stack **without touching the world** - `Test Terrain` exists
 precisely so you can tune layers against a synthetic surface before pointing them at a build.
 
 ## The workflow
@@ -24,7 +24,7 @@ precisely so you can tune layers against a synthetic surface before pointing the
    the graph so a mask connection is distinguishable at a glance.
 3. **Select a node** to see its settings in the parameters sidebar, docked to the right of the
    canvas and on by default. Double-clicking a node also opens its parameters.
-4. **Tidy as you go** — `Group Selection` wraps the selected nodes in a titled box,
+4. **Tidy as you go** - `Group Selection` wraps the selected nodes in a titled box,
    `Zoom to Fit` and `Focus Selection` navigate a graph too big for the screen.
 5. **Wire to `Output`** and the graph produces its result.
 
@@ -45,8 +45,8 @@ Fourteen nodes, in four categories.
 your biome layers against it, confirm they behave, then swap in real geometry. Developing
 layers directly against a build means committing and undoing repeatedly.
 
-**`Biome`** applies a biome definition — the same layer stacks the
-[Biome Brush](../tools/biome-brush.md) uses — to its input region. This is how a tuned biome
+**`Biome`** applies a biome definition - the same layer stacks the
+[Biome Brush](../tools/biome-brush.md) uses - to its input region. This is how a tuned biome
 gets reused without painting it by hand.
 
 **`Mask From Noise`** turns a noise pattern into a [column mask](../glossary.md#column-mask)
@@ -73,9 +73,9 @@ graph with three near-identical branches.
   than the world, and a mask has nothing to test against there. If you need masks to actually
   apply, paint with the [Biome Brush](../tools/biome-brush.md).
 - **Opening the editor deselects your Axiom tool.** Deliberate, so clicks and keybinds do not
-  collide — but it means closing the editor leaves you with no tool selected.
+  collide - but it means closing the editor leaves you with no tool selected.
 - **`Test Terrain` is not your world.** Layers tuned against it will behave the same way, but
   its surface is synthetic noise: it has no cliffs, no overhangs and no water edge, so a
   slope-masked layer looks better there than it will on real terrain.
 - **Delete removes the selected nodes.** There is no graph-level undo, so a deleted cluster is
-  rebuilt by hand — `Ctrl+C` before experimenting on something you care about.
+  rebuilt by hand - `Ctrl+C` before experimenting on something you care about.

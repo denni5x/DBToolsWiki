@@ -9,12 +9,12 @@ Terms used here are defined in the [glossary](../glossary.md); the ideas behind 
 ## What it's for
 
 Dressing terrain that already has its shape. You have a hillside, and you want stone where it
-is steep, grass where it is not, and trees only on the gentle parts — as one continuous
+is steep, grass where it is not, and trees only on the gentle parts - as one continuous
 surface rather than three separate passes.
 
 The brush paints a [column mask](../glossary.md#column-mask), the biome's
 [layers](../glossary.md#layer) apply to it, and nothing is written to the world until you press
-Enter. So the expensive part — deciding what the biome should be — happens while nothing is
+Enter. So the expensive part - deciding what the biome should be - happens while nothing is
 committed and everything is still adjustable.
 
 It is not a terrain-shaping tool. It writes blocks at and around an existing surface; it does
@@ -44,7 +44,7 @@ To skip the preview stage entirely, turn on
 Everything else is detail. These three decide whether the result looks designed or looks
 generated.
 
-### `Strength` — how much of the brush lands
+### `Strength` - how much of the brush lands
 
 Coverage, **not** opacity. At 0.50, half the columns under the brush change completely and the
 rest are untouched; it is not a half-strength blend. Which columns change is a function of
@@ -53,7 +53,7 @@ position, so the pattern holds still while you drag other sliders rather than cr
 Use it for edges. A full-strength core with a few strength-0.3 passes around the rim reads as a
 natural boundary; a hard-edged full-strength patch reads as a paint bucket.
 
-### `Strength Factor` — per layer, on the same mask
+### `Strength Factor` - per layer, on the same mask
 
 Scales the mask under **one layer alone**. This is the knob that makes a single painted stroke
 produce a layered result: terrain layer at full strength for continuous ground cover, tree layer
@@ -62,10 +62,10 @@ at 0.1 so trees are scattered rather than a forest.
 If you find yourself painting the same area twice with different stacks, this is the control you
 wanted.
 
-### `Offset From Surface` and `Depth` — where a terrain band sits
+### `Offset From Surface` and `Depth` - where a terrain band sits
 
 Together they define the band a terrain layer replaces, measured from the surface. `Offset`
-runs -64 to 64, so a band can start **above** the surface as well as below — which is how you
+runs -64 to 64, so a band can start **above** the surface as well as below - which is how you
 get snow sitting on top rather than replacing the ground under it.
 
 Depth interacts with masks in a way worth knowing: because a mask is tested once at the surface,
@@ -75,7 +75,7 @@ a masked layer keeps its full depth on a slope instead of collapsing to its topm
 
 - **Enter clears the painted mask.** This is deliberate: the preview would otherwise keep
   repainting the columns just committed. Delete and the `Clear Mask` button do the same thing.
-- **Undo means two different things.** With a mask standing, Undo *clears the mask* — nothing has
+- **Undo means two different things.** With a mask standing, Undo *clears the mask* - nothing has
   been written to the world yet, so the painted mask is the only thing an undo could mean. With
   no mask up, Undo reaches Axiom's own and takes the committed blocks back. Under `Instant Apply`
   it is always the latter.
@@ -83,7 +83,7 @@ a masked layer keeps its full depth on a slope instead of collapsing to its topm
   the Y each stroke actually reached. So painting beside a cliff or under an overhang lands the
   layers on the surface you are brushing, not on the cliff top above it.
 - **The painted mask is not in presets.** Saving a preset saves the stack, the masks and the
-  Minecraft biome — not where you painted. That is selection state.
+  Minecraft biome - not where you painted. That is selection state.
 - **A missing blueprint does not break the layer.** An object layer entry whose blueprint no
   longer resolves becomes a "not found" placeholder with a `Reselect` button, and is skipped
   rather than rolled.
@@ -111,10 +111,10 @@ Actions this tool claims, in Axiom's terms (see [Keys](../concepts.md#keys)):
 | `Undo` | Clear the painted mask if one is up, otherwise Axiom's undo |
 | `Escape` | Cancel the stroke in progress |
 
-No Minecraft keybinding of its own, and no number key — select it from Axiom's toolbar.
+No Minecraft keybinding of its own, and no number key - select it from Axiom's toolbar.
 
 ## Related
 
-- [Concepts → Masks](../concepts.md#masks) — why masks are tested at the surface
+- [Concepts → Masks](../concepts.md#masks) - why masks are tested at the surface
 - [Concepts → Coverage, not opacity](../concepts.md#coverage-not-opacity)
-- [Concepts → Layers](../concepts.md#layers) — terrain vs object layers side by side
+- [Concepts → Layers](../concepts.md#layers) - terrain vs object layers side by side

@@ -17,7 +17,7 @@ Practical consequences, each of which surprises someone eventually:
 - **Undo is Axiom's undo.** A committed DBTools edit is taken back by the same Undo that
   takes back an Axiom edit, and the two interleave in one history.
 - **Masks are Axiom masks**, edited in Axiom's Mask window. DBTools does not have a mask
-  editor of its own — it borrows that window. See [Mask ownership](#mask-ownership).
+  editor of its own - it borrows that window. See [Mask ownership](#mask-ownership).
 - **Blueprints are Axiom blueprints.** Any tool that places one reads the same folder the
   blueprint browser shows.
 - **Axiom's version matters.** DBTools tracks specific Axiom releases; a mismatch is the
@@ -28,19 +28,19 @@ Practical consequences, each of which surprises someone eventually:
 DBTools is not only a set of toolbar tools, and looking for everything on the toolbar is
 how people miss half of it. There are three places it appears.
 
-### 1. Axiom's toolbar — eleven tools
+### 1. Axiom's toolbar - eleven tools
 
 Create, Place, Rotate, BP→Path, BP→Shape, Grid Place, Tree, Prototype, OBJ to MC, Slab
 Brush, Biome Brush. These are *tools*: you select one, it takes your clicks, and it writes
 through Axiom's undo. Everything else on this page is mostly about them.
 
-### 2. The main menu bar — a **DBTools** menu
+### 2. The main menu bar - a **DBTools** menu
 
 Four entries, none of which is a tool and none of which needs one selected:
 
 | Entry | What it opens |
 |---|---|
-| Bulk Edit Blueprints | The Bulk Blueprint Editor — rename, retag and re-author many blueprints at once |
+| Bulk Edit Blueprints | The Bulk Blueprint Editor - rename, retag and re-author many blueprints at once |
 | File Conversion | Blueprint ⇄ schematic conversion, and Hytale prefab export |
 | Node Editor | A node graph for terrain and biomes |
 | Settings | DBTools' own options |
@@ -53,18 +53,18 @@ backup.
 The Node Editor is the one that behaves a little like a tool: opening it deselects Axiom's
 active tool so its keybinds and clicks do not overlap the editor's.
 
-### 3. Inside Axiom's own UI — extensions
+### 3. Inside Axiom's own UI - extensions
 
 DBTools adds controls to screens that are Axiom's, not its own, so they appear with no
 DBTools branding around them:
 
-- **Export Palette** in Axiom's creative colour picker and in its gradient helper — a side
+- **Export Palette** in Axiom's creative colour picker and in its gradient helper - a side
   tab under Axiom's own that adds the blocks listed for the picked colour, or the generated
   gradient, to the Palettes panel as a new palette.
 - **A second fly speed slider** in Axiom's hotbar screen, alongside the first. Toggle it in
   DBTools → Settings (`Show 2nd Fly Speed Slider`).
 - **Toggle Fly Speed**, the mod's one Minecraft keybinding (unbound by default), which swaps
-  the live fly speed with the second slider's stored value — so you can flip between a
+  the live fly speed with the second slider's stored value - so you can flip between a
   survey speed and a detail speed without dragging anything.
 
 If you cannot find a DBTools feature, it is on one of these three surfaces, and the menu bar
@@ -73,7 +73,7 @@ is the one people forget.
 ## Preview, then commit
 
 Most DBTools tools do not write blocks while you are adjusting them. They show you what
-*would* happen, you keep adjusting, and then you commit — almost always with **Enter**.
+*would* happen, you keep adjusting, and then you commit - almost always with **Enter**.
 
 This matters because it inverts the usual expectation. Dragging a slider in the Biome
 Brush is free: nothing has been written, undo has nothing to take back, and you can keep
@@ -82,7 +82,7 @@ going. The moment of truth is Enter.
 Two consequences:
 
 - **Undo means different things before and after the commit.** While a preview is standing,
-  there is nothing in the world to undo — so in the Biome Brush, Undo clears the painted
+  there is nothing in the world to undo - so in the Biome Brush, Undo clears the painted
   mask instead, because that is the only thing on screen you could possibly mean. Once you
   have pressed Enter, Undo reaches Axiom's history and takes the blocks back.
 - **Escape cancels rather than closes.** Tools that can be mid-placement report a cancel
@@ -96,7 +96,7 @@ Undo means what it normally means.
 
 ## Masks
 
-A **mask** answers "where is this allowed to apply?" — on grass only, above y=70 only, where
+A **mask** answers "where is this allowed to apply?" - on grass only, above y=70 only, where
 the ground is steeper than 45°, and so on. DBTools masks are Axiom masks, built in Axiom's
 Mask window.
 
@@ -104,7 +104,7 @@ Two things make DBTools' use of them unusual.
 
 ### A mask is tested at the surface, once per column
 
-A DBTools mask is evaluated **once per painted column, at that column's surface** — not at
+A DBTools mask is evaluated **once per painted column, at that column's surface** - not at
 every block it is about to write. This is a deliberate choice with a visible payoff: a layer
 masked to "steeper than 45°" keeps its full depth, where testing every block would leave
 only the topmost row, because a block buried in the ground has no slope to compare.
@@ -115,7 +115,7 @@ cut out of it.
 
 ### Mask ownership
 
-There is one Axiom Mask window and potentially many masks that want it — a biome's own mask,
+There is one Axiom Mask window and potentially many masks that want it - a biome's own mask,
 and one per layer. DBTools resolves this by **only taking the window when you ask**: press
 `Edit Biome Mask` (or a layer's `Layer Mask`) and that mask takes over the window until you
 are done.
@@ -142,7 +142,7 @@ kinds, and the difference is what they write.
 | Writes | Blocks, in a band measured from the surface | Whole blueprints, scattered on the surface |
 | Shaped by | `Offset From Surface` and `Depth` | `Min Spacing`, `Vertical Offset`, `Random Yaw`, `Random Flip` |
 | Block choice | A weighted blend sampled spatially, driven by Axiom's noise painter | Picked from a weighted set of blueprints |
-| Masked | Per block band, tested at the surface | Per placement — all or nothing |
+| Masked | Per block band, tested at the surface | Per placement - all or nothing |
 
 Both kinds share the stack controls: `Enabled`, `Solo`, `Remove`, `Move Up`, a collapsible
 header, and a `Strength Factor`.
@@ -160,7 +160,7 @@ removing it from the list.
 This is the single most misread control in the mod, so it gets its own section.
 
 Mask strength is **coverage**, not opacity. At 50% strength, half the columns under the brush
-change — fully — and the other half are untouched. It is not a 50% blend of the layer with
+change - fully - and the other half are untouched. It is not a 50% blend of the layer with
 what was there.
 
 And the choice of *which* columns is a **function of position**, not a random draw. So the
@@ -180,8 +180,8 @@ What a preset does and does not carry is a deliberate line:
 
 - **Carried:** the layer stack, each layer's parameters, each layer's mask, the biome's own
   mask, and the Minecraft biome setting.
-- **Not carried:** the painted column mask. That is selection state — where you happen to be
-  working right now — not part of the biome's definition.
+- **Not carried:** the painted column mask. That is selection state - where you happen to be
+  working right now - not part of the biome's definition.
 
 Object layer blueprints are saved as **path + name + weight** rather than embedded. An entry
 that no longer resolves is kept as a "not found" placeholder with a `Reselect` button, and is
@@ -191,7 +191,7 @@ can fix, rather than silently dropping objects or refusing to load.
 ## Keys
 
 DBTools adds exactly **one** Minecraft keybinding: **Toggle Fly Speed**, which is *unbound by
-default* — set it in Options → Controls → DBTools if you want it.
+default* - set it in Options → Controls → DBTools if you want it.
 
 Everything else is not a keybinding at all. Tools receive Axiom's **user actions**, so Enter,
 Delete, Escape, Undo, Redo and the mouse buttons mean what they mean in Axiom, and a tool only

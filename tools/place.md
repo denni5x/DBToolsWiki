@@ -24,7 +24,7 @@ that surface, so you are not rotating by hand before every paste.
 ### `Auto Rotate`
 
 Orients the blueprint to the surface under the cursor instead of keeping its saved rotation.
-Right for anything that should sit *on* something — rocks, debris, vegetation, wall fittings.
+Right for anything that should sit *on* something - rocks, debris, vegetation, wall fittings.
 
 Turn it off for anything with a correct upright orientation that you do not want reinterpreted:
 a building, a signpost, a statue.
@@ -36,7 +36,7 @@ rendering of the blueprint, which only matters for very large ones.
 
 ### `Include Non-Solid Blocks`
 
-Whether the preview's surface detection counts non-solid blocks — grass, flowers, water. Off,
+Whether the preview's surface detection counts non-solid blocks - grass, flowers, water. Off,
 the placement reads through them to the ground beneath, which is usually what you want when
 placing onto a meadow. On, a tall grass block is a surface and the asset sits on top of it.
 
@@ -46,7 +46,7 @@ placing onto a meadow. On, a tall grass block is a surface and the asset sits on
   cursor, so on a ridge or an edge the result depends on exactly which side you hovered. Move
   the cursor a block and try again rather than fighting it.
 - **`Merge Blocks` changes what overwrites what.** With it on, the blueprint's blocks combine
-  with what is already there instead of replacing the volume — the difference between dressing
+  with what is already there instead of replacing the volume - the difference between dressing
   an existing build and stamping over it.
 - **The direction keys move the placement, not the camera**, while a preview is live.
 - **One blueprint at a time.** For many at once, use [Grid Place](grid-place.md),
