@@ -27,4 +27,4 @@
 
 ## Inside Axiom
 
-* [Extensions](extensions.md)
+* [Extensions](inside-axiom/extensions.md)
