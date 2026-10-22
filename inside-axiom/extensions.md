@@ -57,6 +57,6 @@ It is toggled by `Show 2nd Fly Speed Slider` in [Settings](../windows/settings.m
 
 ## Not on this page
 
-DBTools also hooks several Axiom internals that add **no controls** - the toolbar icon rendering that puts the eleven tools in Axiom's tool window, the icon font merge that gives them glyphs, and a world render hook. These are plumbing: there is nothing to configure and nothing to find.
+DBTools also hooks several Axiom internals that add **no controls** - the toolbar icon rendering that puts the twelve tools in Axiom's tool window, the icon font merge that gives them glyphs, and a world render hook. These are plumbing: there is nothing to configure and nothing to find.
 
 The [Node Editor](../windows/node-editor.md) is not here either. It is a window on the [DBTools menu](../#2-windows--the-dbtools-menu), not an extension of an Axiom screen.

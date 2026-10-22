@@ -1,4 +1,4 @@
-# OBJ to MC
+# 3D to MC
 
 Turn a 3D model into colour-matched blocks.
 

@@ -98,7 +98,7 @@ whichever side your main hand is set to, mirroring with Axiom's.
 ## Not on this page
 
 DBTools also hooks several Axiom internals that add **no controls** - the toolbar icon
-rendering that puts the eleven tools in Axiom's tool window, the icon font merge that gives
+rendering that puts the twelve tools in Axiom's tool window, the icon font merge that gives
 them glyphs, and a world render hook. These are plumbing: there is nothing to configure and
 nothing to find.
 

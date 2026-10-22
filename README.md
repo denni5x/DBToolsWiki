@@ -8,7 +8,7 @@
 
 &#x20;&#x20;
 
-An [Axiom](https://modrinth.com/mod/axiom) add-on for Minecraft: eleven world-building tools, a node editor, bulk blueprint editing, and file conversion.
+An [Axiom](https://modrinth.com/mod/axiom) add-on for Minecraft: twelve world-building tools, a node editor, bulk blueprint editing, and file conversion.
 
 ## Start here
 
@@ -31,9 +31,10 @@ In toolbar order. Select one and it takes your clicks.
 | [Grid Place](tools/grid-place.md)   | Tile a blueprint across a grid                                     |
 | [Tree](tools/tree.md)               | A parametric tree, every parameter live                            |
 | [Prototype](tools/prototype.md)     | Block out massing from blueprints before committing detail         |
-| [OBJ to MC](tools/obj-to-mc.md)     | Turn an OBJ, glTF/GLB, STL or PLY model into colour-matched blocks |
+| [3D to MC](tools/obj-to-mc.md)      | Turn an OBJ, glTF/GLB, STL or PLY model into colour-matched blocks |
 | [Slab Brush](tools/slab-brush.md)   | Smooth terraced terrain into slabs and stairs                      |
 | [Biome Brush](tools/biome-brush.md) | Paint an area, stack layers of blocks and objects on it            |
+| [River](tools/river-tool.md)        | Carve a watercourse along a drawn path, banks and scatter included |
 
 ## 2. Windows - the DBTools menu
 

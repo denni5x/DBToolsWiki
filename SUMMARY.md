@@ -14,9 +14,10 @@
 * [Grid Place](tools/grid-place.md)
 * [Tree](tools/tree.md)
 * [Prototype](tools/prototype.md)
-* [OBJ to MC](tools/obj-to-mc.md)
+* [3D to MC](tools/obj-to-mc.md)
 * [Slab Brush](tools/slab-brush.md)
 * [Biome Brush](tools/biome-brush.md)
+* [River](tools/river-tool.md)
 
 ## Windows
 

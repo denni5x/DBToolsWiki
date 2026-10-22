@@ -28,11 +28,14 @@ Practical consequences, each of which surprises someone eventually:
 DBTools is not only a set of toolbar tools, and looking for everything on the toolbar is
 how people miss half of it. There are three places it appears.
 
-### 1. Axiom's toolbar - eleven tools
+### 1. Axiom's toolbar - twelve tools
 
-Create, Place, Rotate, BP→Path, BP→Shape, Grid Place, Tree, Prototype, OBJ to MC, Slab
-Brush, Biome Brush. These are *tools*: you select one, it takes your clicks, and it writes
-through Axiom's undo. Everything else on this page is mostly about them.
+Create, Place, Rotate, BP→Path, BP→Shape, Grid Place, Tree, Prototype, 3D to MC, Slab
+Brush, Biome Brush, River. These are *tools*: you select one, it takes your clicks, and it
+writes through Axiom's undo. Everything else on this page is mostly about them.
+
+All of them dress or place onto terrain that already has its shape, with one exception:
+the **River** tool raises and lowers columns to make room for water.
 
 ### 2. The main menu bar - a **DBTools** menu
 
@@ -87,7 +90,7 @@ Two consequences:
   have pressed Enter, Undo reaches Axiom's history and takes the blocks back.
 - **Escape cancels rather than closes.** Tools that can be mid-placement report a cancel
   label to Axiom while there is something to cancel, and ignore Escape otherwise so the key
-  still reaches the game menu. OBJ to MC is explicit about this: it only takes Escape and
+  still reaches the game menu. 3D to MC is explicit about this: it only takes Escape and
   Delete while a placement is actually live, not for as long as a model stays loaded.
 
 The exception is **Instant Apply** in the Biome Brush, which commits each stroke on release

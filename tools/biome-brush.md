@@ -24,8 +24,8 @@ not raise or lower that surface.
 
 1. **Select the tool** and set `Mode` to `Paint`.
 2. **Build the stack.** `Add Terrain Layer` for bands of blocks, `Add Object Layer` for
-   scattered [blueprints](../glossary.md#blueprint). Or load a
-   [preset](../glossary.md#preset) from `Presets` at the top of the tool.
+   scattered [blueprints](../glossary.md#blueprint), `Add Plant Layer` for Minecraft's own
+   plants. Or load a [preset](../glossary.md#preset) from `Presets` at the top of the tool.
 3. **Paint** with right mouse. The masked area fills in with the result as you go.
 4. **Tune.** Drag any layer parameter and the whole painted area updates. This is free —
    nothing has been written yet.
@@ -71,6 +71,74 @@ get snow sitting on top rather than replacing the ground under it.
 Depth interacts with masks in a way worth knowing: because a mask is tested once at the surface,
 a masked layer keeps its full depth on a slope instead of collapsing to its topmost row.
 
+## Plant layers
+
+A plant layer stands one plant per column, drawn from a weighted set of Minecraft's 95 plants.
+
+It exists because plants are the one thing an object layer handles badly. A two-block plant -
+tall grass, a sunflower, a large fern - is two block states that have to agree with each other,
+and a scatter that writes one of them writes a broken half. A plant layer places the whole
+plant, so the set can be picked from by name without thinking about it.
+
+Weighting works as it does in an object layer: relative, not percentages, and weight 0 keeps an
+entry in the list and out of the roll.
+
+## A blueprint's own offset
+
+Every blueprint in an object layer carries an `X`, `Y`, `Z` offset of its own, in its row
+alongside the weight. The layer's `Vertical Offset` moves the whole set at once; this moves one
+entry. The two add together.
+
+`Y` is what it is for. A tree whose blueprint carries three blocks of root has to sit three
+blocks lower than one that starts at its trunk, so a mixed set of trees could only ever be right
+for one of them while the layer's slider was the only control.
+
+The offset is measured in the blueprint's own frame, so it turns with the placement. A sideways
+nudge that puts an off-centre trunk over its column keeps pointing the same way relative to the
+object under `Random Yaw`, rather than being correct at one rotation in four.
+
+It moves where an object lands and deliberately not which columns are candidates, so nudging an
+entry changes neither the weighting nor the spacing.
+
+Each entry is its own collapsible row, under a header that folds the whole set away. The row
+shows the name, the weight and the share of the draw; open it for the weight and the offset. A
+layer with seventy-six trees in it used to push the layer's own spacing and strength a screen and
+a half below the list, which is the wrong way round - those are what a set of trees is actually
+tuned with.
+
+## WorldPainter interchange
+
+`Export .layer` writes the biome as a WorldPainter custom layer: terrain layers as ground cover,
+object layers as sets of custom objects, plant layers as WorldPainter's own Plants layer, all
+combined into one paintable layer.
+
+`Import .layer` reads one back, including a layer built in WorldPainter rather than here. Its
+custom objects are written into your blueprint library as blueprints and arrive as an object
+layer. **Imports are added to the biome rather than replacing it**, so an import never costs you
+work you had already done.
+
+Both directions report what they could not carry across rather than dropping it quietly. The
+things worth knowing before you rely on a round trip:
+
+- **Density is not spacing.** WorldPainter rolls one density percentage per column and lets the
+  results overlap; the Biome Brush has a `Strength Factor` and a `Min Spacing` measured in each
+  object's footprint. One number has to become two. Import puts the density on the
+  `Strength Factor` and leaves `Min Spacing` at the 100% a new layer starts at, so an imported
+  set is **thinner than it was in WorldPainter** - turning `Min Spacing` down is the fix, and the
+  import says so.
+- **A blueprint's height offset goes both ways, its sideways offset does not.** WorldPainter
+  keeps a vertical offset per object, so export writes the layer's `Vertical Offset` plus each
+  blueprint's own as one number and import splits them back out - whatever every object agrees on
+  goes back on the layer's slider, and each blueprint keeps only its difference. WorldPainter has
+  only one horizontal offset per object and uses it as that object's anchor rather than as an
+  adjustment to one, so a sideways nudge has nowhere to go. Export says which blueprints were
+  affected.
+- **A mixed material's mode carries across.** Noise arrives as independent per-block picks, Blobs
+  as patches of WorldPainter's own size. Layered is the one mode a single terrain layer cannot
+  express, and the import says so.
+- **A blob mix will not look identical on both sides.** The two generators are sampled at
+  different scales.
+
 ## Gotchas
 
 - **Enter clears the painted mask.** This is deliberate: the preview would otherwise keep
@@ -96,6 +164,8 @@ a masked layer keeps its full depth on a slope instead of collapsing to its topm
 - **Minecraft biomes snap to a 4×4×4 grid.** With `Set Minecraft Biome` on, a stroke's edge
   snaps to that grid, and it is written as a *second* undo step. There is no fill-vertically
   option: the cell at the surface is the one that gets written.
+- **An import adds, it does not replace.** Run the same `.layer` twice and you have the stack
+  twice.
 - **The Node Editor's Biome node reports masks, it does not apply them.** Its surfaces come from
   a region rather than the world, so there is nothing to test a mask against.
 
@@ -118,3 +188,4 @@ No Minecraft keybinding of its own, and no number key - select it from Axiom's t
 - [Concepts → Masks](../concepts.md#masks) - why masks are tested at the surface
 - [Concepts → Coverage, not opacity](../concepts.md#coverage-not-opacity)
 - [Concepts → Layers](../concepts.md#layers) - terrain vs object layers side by side
+- [River](river-tool.md) - moving the surface rather than dressing it, and the same scatter
